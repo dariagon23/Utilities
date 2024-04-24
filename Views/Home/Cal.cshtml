@@ -1,0 +1,21 @@
+﻿@using Utilities.Database.Models
+@model List<Tariff>
+@{
+    ViewData["Title"] = "Cal";
+}
+
+<h1>Результат расчёта стоимости</h1>
+<table class="table">
+    <tr><th>Поставщик</th><th>Тариф</th><th>Описание тарифа</th><th>Цена</th><th>Итог</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProviderId</td>
+            <td>@item.TariffName</td>
+            <td>@item.TariffConsumer</td>
+            <td>@item.TariffPrice</td>
+            <td>@item.TariffPrice</td>
+        </tr>
+    }
+
+</table>

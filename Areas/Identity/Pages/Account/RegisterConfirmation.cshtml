@@ -1,0 +1,23 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Подтверждение регистрации";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+     У вас пока нет прав доступа к сервису.  <a id="confirm-link" href="@Model.EmailConfirmationUrl">Перейти для подтверждения регистрации</a>
+</p>
+    }
+    else
+    {
+<p>
+        Вам было выслано письмо на электронную почту. 
+        Пожалуйста, проверьте свой адрес электронной почты для подтверждения регистрации в системе.
+</p>
+    }
+}
+
